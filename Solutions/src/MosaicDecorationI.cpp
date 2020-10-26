@@ -1,8 +1,9 @@
 /*
  IEEEXtreme 14.0 solutions
  Authors: team TLE - https://github.com/mhamedouadghiri - https://github.com/aaiit
+ Verdict: 43.31 points (100%)
 */
- 
+
 #include <bits/stdc++.h>
 using namespace std;
 
