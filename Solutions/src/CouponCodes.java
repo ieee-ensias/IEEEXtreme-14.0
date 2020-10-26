@@ -18,13 +18,13 @@ public class CouponCodes implements Runnable {
         int ans = 0;
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {
-                if (ham(coupons[i], coupons[j]) == 1) ans++;
+                if (hammingDistance(coupons[i], coupons[j]) == 1) ans++;
             }
         }
         pw.println(ans);
     }
 
-    static int ham(String s1, String s2) {
+    static int hammingDistance(String s1, String s2) {
         int i = 0, cnt = 0;
         while (i < s1.length()) {
             if (s1.charAt(i) != s2.charAt(i)) cnt++;

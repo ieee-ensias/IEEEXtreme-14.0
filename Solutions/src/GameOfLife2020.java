@@ -41,26 +41,28 @@ public class GameOfLife2020 implements Runnable {
         for (int iter = 0; iter < m; iter++) {
             for (int x = 0; x <= n; x++) {
                 for (int y = 0; y <= n; y++) {
-                    int aliveNeigh = 0;
+                    int aliveNeighbors = 0;
                     for (int i = -1; i <= 1; i++) {
                         for (int j = -1; j <= 1; j++) {
                             if (i * j == 0) {
-                                aliveNeigh += grid[(x + i + n) % n][(y + j + n) % n];
+                                aliveNeighbors += grid[(x + i + n) % n][(y + j + n) % n];
                             }
                         }
                     }
-                    aliveNeigh -= grid[x % n][y % n];
+                    aliveNeighbors -= grid[x % n][y % n];
 
+
+                    // update the grid
                     if (grid[x % n][y % n] == 0) {
                         for (Integer e1po : e1pos) {
-                            if (e1po - 1 == aliveNeigh) {
+                            if (e1po - 1 == aliveNeighbors) {
                                 nextGrid[x % n][y % n] = 1;
                                 break;
                             }
                         }
                     } else if (grid[x % n][y % n] == 1) {
                         for (Integer a1po : a1pos) {
-                            if (a1po - 1 == aliveNeigh) {
+                            if (a1po - 1 == aliveNeighbors) {
                                 nextGrid[x % n][y % n] = 1;
                                 break;
                             }
