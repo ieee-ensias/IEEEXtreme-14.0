@@ -8,27 +8,37 @@
 
 import java.io.*;
 
+/***
+ * The given program (weird looking string...) is basically written in
+ * an esoteric language https://en.wikipedia.org/wiki/Brainfuck (an acquired taste ;)),
+ * and the purpose is to return the output as if the input is processed by this program.
+ *
+ * The interpret function needs to be optimised in order to get a perfect success rate;
+ * this version Exceeds the Time Limit -TLE- in the official competition in 2 out of 4 tests
+ * 3696ms ie. 16ms slower than the max time allowed!
+ * First step may be optimising the loops, inc and dec the data pointer.
+ */
 public class FurinBack implements Runnable {
+    private static StringBuilder answer = new StringBuilder();
+
     private void solve() throws IOException {
         String program = ">,<>>,>,<[->->+<><<]+->>[-<<+>>]<+-><><<<[-+->-<+-<+>]<[->+<]><>>>>>><>++->>+->>>>>+[>><>>>[-]<[-<>-+]<<>[-+-]-++-+-<[-]<><<>[+---+]<><<<<+-<<<<>-+<><<<><+-<<[->>>>>>>+>>>>>-+>+<<<><<<><<<<<<<<<]>[->>>>><><>><>>+>>>>>>+<<<<<><<<<<+-<<<<]>[->>>>>>><>+>>>>-+><>>+<<<<<<+-<<<<><<<<-+><]>>-++-+>+-+[<-]<[->><>++-<<<]>>>>[-<<<+--+<<<<+>><>>>>>>]>[-<<-+<<<<<+<>>+->>>>>>]>[-<<<<><<<><<+>>>>>>>]>>>>>><>>+[-<<<<+--+<><+-<<<<<<[->>+>>+<<<<]+->[->>+>>+-+<<<<]>[-<<+>>]>[-<<+>>]+[[<>-]-++>[<-]<+-[+--><>><>-<<<]>>-+->>>+>[<-]<+-[->+>[-<-]<[>>[-<<-+->]-<<[->><->+->-+-<<<<]]<]>>-<<<<<+>[><<-]<[>+->[-+<<->]<<[<]]>-+-]>>>>><>>>><>+]-<<<>+-<<<>+>-++[<-]<[-+>>+[<<<>->-+]<<[>>>+[<-+<<->>]<<<[<]]]>-]>>>>[-]<<<<<<<-+<><<<<<<<[-]>>+>+[<-]<[->>+<><<<]>+>[<-]<[>>[<<->]<<[<]]>-[+>>>>>>><++-+++++++++<<<<<<+>+-[<<>-]<[>>[<<->]<<[<]]>-[++>[<-]<[->>-<<<]>>->>+>>+>-[<-]<[<<[->>>+<<><<]+->>>>>+>+[<><-]<><[->>+<<<]<<-<]<<<<+>[<-]<[>>[<<->]<<[<]]>-]>>++++++++[->++++++<]>[-<<<<+>>>>]>>>>>+><>-+[<-]<[>>[<<->]<<[<]]>-[++>[<-]<[->>-<<<]>>-<<<<<<<<+>+[<-]<[->>+<<<]>>>>>>>>+>[<-]<[>>[<<->]<<[<]]>-]<<[-]<<<<<+>[<-]<[>>[<<->]<<[<]]>-]<<[.<]!";
 
         int t = nextInt();
         while (t-- != 0) {
-            char[] chars = nextLine().toCharArray();
-            interpret(program, chars);
-            pw.println(nice);
-            nice = new StringBuilder();
+            char[] inputChars = nextLine().toCharArray();
+            interpret(program, inputChars);
+            pw.println(answer);
+            answer = new StringBuilder();
         }
     }
-
-    private static StringBuilder nice = new StringBuilder();
 
     private static int ptr;
     private static final int length = 65535;
     private static final byte[] memory = new byte[length];
 
     private void interpret(String s, char[] chars) {
-        int charCon = 0;
+        int charCount = 0;
         int c = 0;
         for (int i = 0; i < s.length(); i++) {
             if (s.charAt(i) == '>') {
@@ -46,9 +56,9 @@ public class FurinBack implements Runnable {
             else if (s.charAt(i) == '-')
                 memory[ptr]--;
             else if (s.charAt(i) == '.')
-                nice.append((char) (memory[ptr]));
+                answer.append((char) (memory[ptr]));
             else if (s.charAt(i) == ',') {
-                memory[ptr] = (byte) (chars[charCon++]);
+                memory[ptr] = (byte) (chars[charCount++]);
             } else if (s.charAt(i) == '[') {
                 if (memory[ptr] == 0) {
                     i++;
