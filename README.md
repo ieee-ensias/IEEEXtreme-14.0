@@ -1,6 +1,6 @@
 
 <!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-3-orange.svg?style=flat-square)](#contributors-)
+[![All Contributors](https://img.shields.io/badge/all_contributors-4-orange.svg?style=flat-square)](#contributors-)
 <!-- ALL-CONTRIBUTORS-BADGE:END -->
 
 
@@ -90,6 +90,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
     <td align="center"><a href="https://www.linkedin.com/in/kawtar-choubari-2226b0150/"><img src="https://avatars3.githubusercontent.com/u/56233818?v=4" width="100px;" alt=""/><br /><sub><b>Kawtar CHOUBARI</b></sub></a><br /><a href="https://github.com/ieee-ensias/IEEEXtreme-14.0/commits?author=choubari" title="Code">💻</a> <a href="https://github.com/ieee-ensias/IEEEXtreme-14.0/pulls?q=is%3Apr+reviewed-by%3Achoubari" title="Reviewed Pull Requests">👀</a> <a href="#content-choubari" title="Content">🖋</a> <a href="https://github.com/ieee-ensias/IEEEXtreme-14.0/commits?author=choubari" title="Documentation">📖</a></td>
     <td align="center"><a href="https://github.com/aaiit"><img src="https://avatars3.githubusercontent.com/u/57833816?v=4" width="100px;" alt=""/><br /><sub><b>Abdellatif AitHammadi</b></sub></a><br /><a href="https://github.com/ieee-ensias/IEEEXtreme-14.0/commits?author=aaiit" title="Code">💻</a></td>
     <td align="center"><a href="https://www.linkedin.com/in/m-hamed-sefiane-el-ouadghiri-547736198/"><img src="https://avatars1.githubusercontent.com/u/56483502?v=4" width="100px;" alt=""/><br /><sub><b>SEFIANE-EL OUADGHIRI M'hamed</b></sub></a><br /><a href="https://github.com/ieee-ensias/IEEEXtreme-14.0/commits?author=mhamedouadghiri" title="Code">💻</a></td>
+    <td align="center"><a href="https://www.linkedin.com/in/adnane-aabbar/"><img src="https://avatars1.githubusercontent.com/u/44345798?v=4" width="100px;" alt=""/><br /><sub><b>Adnane Aabbar</b></sub></a><br /><a href="https://github.com/ieee-ensias/IEEEXtreme-14.0/commits?author=adnaneaabbar" title="Code">💻</a></td>
   </tr>
 </table>
 
