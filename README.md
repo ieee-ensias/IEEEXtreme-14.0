@@ -16,27 +16,33 @@
 
 To practice, try to solve the problems by yourself and submit your solutions to get your score, each title in the list below will take you to The CSAcademy practice session of the problem. _(The list is ordered according to the release time of each challenge)_ .
 
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
-* []()
+* [Welcome to IEEEXtreme 14.0]()
+* [IEEEXplore Indexing]()
+* [Linearly Separable Samples]()
+* [Mosaic Decoration I]()
+* [Identifying Infected]()
+* [Hotel Wiring]()
+* [Making a Tangram]()
+* [Crafting Wooden Tables]()
+* [The Defensive Walls]()
+* [Rotationnal Lights]()
+* [Magical Stones I]()
+* [Parkour]()
+* [Non-Overlapping Palindromes]()
+* [Furin Back]()
+* [Molecules]()
+* [Mosaic Decoration II]()
+* [The Last of Us]()
+* [ARM Constant Multiplication]()
+* [Game of Life 2020]()
+* [Social Distancing in Class]()
+* [Poker Game]()
+* [Magical Stones II]()
+* [Rescue Mission]()
+* [Restaurant Reopening]()
+* [Coin Collector]()
+* [Mosaic Decoration III]()
+* [Coupon Codes]()
 
 
 
@@ -44,7 +50,7 @@ To practice, try to solve the problems by yourself and submit your solutions to 
 
 :star: Starring the repo is also a contribution :wink: !
 
-Please consider contributing to it if your code is optimized or written in another language and you think it could help the Open Source Community. If you are looking to contribute and it's the first time you do, this tutorial: [First Contribution](https://github.com/firstcontributions/first-contributions) will help you !
+Please consider contributing if your code is optimized or written in another language and you think it could help the Open Source Community. If you are looking to contribute and it's the first time you do, this tutorial: [First Contribution](https://github.com/firstcontributions/first-contributions) will help you !
 
 
 
