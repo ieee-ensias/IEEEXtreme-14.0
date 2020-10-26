@@ -8,6 +8,9 @@
 
 import java.io.*;
 
+/***
+ * One word for you: manachar!
+ */
 public class NonOverlappingPalindromes implements Runnable {
     String[] ends = new String[2];
 
@@ -21,18 +24,19 @@ public class NonOverlappingPalindromes implements Runnable {
                 continue;
             }
             String longest = longest(s, n);
-            String rUp = longestRUp(ends[0], ends[0].length());
-            String rUp2 = longestRUp(ends[1], ends[1].length());
-            if (longest.length() == n) {
+            String longestLeft = longestRunnerUp(ends[0], ends[0].length());
+            String longestRight = longestRunnerUp(ends[1], ends[1].length());
+            if (longest.length() == n) {  // both palindromes must be non empty
                 pw.println(n - 1);
             } else {
-                pw.println(longest.length() + Math.max(rUp.length(), rUp2.length()));
+                pw.println(longest.length() + Math.max(longestLeft.length(), longestRight.length()));
             }
             ends = new String[2];
         }
     }
 
-    public String longestRUp(String s, int n) {
+    // returns right and left indices of longest palindrome in string S of length n
+    private int[] manachar(String s, int n) {
         StringBuilder sb = new StringBuilder();
         sb.append(".");
         for (int i = 0; i < n; i++) {
@@ -65,42 +69,22 @@ public class NonOverlappingPalindromes implements Runnable {
         }
         int left = (center - 1 - maxLen) / 2;
         int right = maxLen + (center - 1 - maxLen) / 2;
+        return new int[]{left, right};
+    }
+
+    // longest palindrome in either end
+    public String longestRunnerUp(String s, int n) {
+        int[] manachar = manachar(s, n);
+        int left = manachar[0];
+        int right = manachar[1];
         return s.substring(left, right);
     }
 
+    // longest main palindrome, stores the indices in ends[]
     public String longest(String s, int n) {
-        StringBuilder sb = new StringBuilder();
-        sb.append(".");
-        for (int i = 0; i < n; i++) {
-            sb.append("#").append(s.charAt(i));
-        }
-        sb.append("#!");
-        String modified = sb.toString();
-        int len = modified.length();
-        int[] P = new int[len];
-        int c = 0, r = 0;
-        for (int i = 1; i < len - 1; i++) {
-            int mir = 2 * c - i;
-            if (i < r) {
-                P[i] = Math.min(r - i, P[mir]);
-            }
-            while (modified.charAt(i + 1 + P[i]) == modified.charAt(i - 1 - P[i])) {
-                P[i]++;
-            }
-            if (i + P[i] > r) {
-                c = i;
-                r = i + P[i];
-            }
-        }
-        int maxLen = 0, center = 0;
-        for (int i = 1; i < len - 1; i++) {
-            if (P[i] > maxLen) {
-                maxLen = P[i];
-                center = i;
-            }
-        }
-        int left = (center - 1 - maxLen) / 2;
-        int right = maxLen + (center - 1 - maxLen) / 2;
+        int[] manachar = manachar(s, n);
+        int left = manachar[0];
+        int right = manachar[1];
         ends[0] = (s.substring(0, left));
         ends[1] = (s.substring(right));
         return s.substring(left, right);
